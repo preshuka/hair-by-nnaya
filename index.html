@@ -1,433 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Hair by Nnaya</title>
+<title>Hair by Nnaya</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Poppins, sans-serif;
-            background: linear-gradient(135deg, #000, #111, #1a1a1a);
-            color: white;
-        }
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#000,#0a0a0a,#111);
+    color:white;
+}
 
+/* ===== HEADER ===== */
 
-        /* ===== GRAPHICS ===== */
+.header{
+    text-align:center;
+    padding:50px 20px;
+    background: linear-gradient(135deg,#000,orange,#000);
+    box-shadow:0 0 40px orange;
+}
 
-        .banner {
-            background: linear-gradient(90deg, #ff6a00, #ff8c00, #ffd6a3);
-            text-align: center;
-            padding: 35px 10px;
-            box-shadow: 0 4px 20px black;
-        }
+.header img{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    border:5px solid white;
+    object-fit:cover;
+}
 
-        .banner h1 {
-            margin: 0;
-            font-size: 38px;
-            letter-spacing: 3px;
-            font-weight: 900;
-            color: black;
-        }
+.title{
+    font-size:60px;
+    font-weight:900;
+    letter-spacing:2px;
+    margin-top:10px;
+}
 
-        .banner p {
-            margin: 5px 0 0 0;
-            font-size: 14px;
-            font-weight: 500;
-            color: #111;
-        }
+.subtitle{
+    font-size:18px;
+    color:#ffd699;
+    margin-top:5px;
+}
 
+/* ===== FORM ===== */
 
-        /* ===== HEADER ===== */
+.container{
+    max-width:600px;
+    margin:40px auto;
+    background:rgba(0,0,0,0.8);
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 0 25px orange;
+}
 
-        header {
-            text-align: center;
-            padding: 10px;
-        }
+h2{
+    text-align:center;
+    color:orange;
+}
 
-        .logo {
-            width: 150px;
-            border-radius: 10px;
-        }
+label{
+    margin-top:15px;
+    display:block;
+    font-size:14px;
+}
 
+input,select,textarea{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    margin-top:5px;
+    background:#222;
+    color:white;
+}
 
-        /* ===== CARD ===== */
+/* CHECKBOX ALIGN */
 
-        .card {
-            max-width: 420px;
-            margin: 20px auto;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(12px);
-            padding: 20px;
-            border-radius: 20px;
-            box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
-        }
+.row{
+    display:flex;
+    gap:20px;
+    align-items:center;
+}
 
+.row input{
+    width:auto;
+}
 
-        /* ===== SECTION ===== */
+/* BUTTON */
 
-        .section {
-            max-width: 420px;
-            margin: 20px auto;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 15px;
-        }
+button{
+    width:100%;
+    padding:14px;
+    margin-top:20px;
+    background:orange;
+    border:none;
+    font-size:18px;
+    font-weight:bold;
+    border-radius:10px;
+    cursor:pointer;
+}
 
+button:hover{
+    background:#ff9900;
+}
 
-        /* ===== INPUT ===== */
+/* PRICE */
 
-        label {
-            display: block;
-            margin-top: 10px;
-        }
+.prices{
+    margin-top:30px;
+    background:black;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0 0 10px orange;
+}
 
-        input,
-        select,
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: none;
-            border-radius: 8px;
-            background: #1f1f1f;
-            color: white;
-        }
+.prices h3{
+    color:orange;
+    text-align:center;
+}
 
+.prices p{
+    margin:6px 0;
+}
 
-        /* ===== OPTIONS ===== */
+/* POPUP */
 
-        .optionBox {
-            background: #181818;
-            padding: 10px;
-            border-radius: 10px;
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+.popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+    display:none;
+    justify-content:center;
+    align-items:center;
+}
 
+.popup-box{
+    background:white;
+    color:black;
+    padding:25px;
+    border-radius:12px;
+    text-align:center;
+}
 
-        /* ===== BUTTON ===== */
-
-        button {
-            margin-top: 15px;
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 12px;
-            font-weight: bold;
-            cursor: pointer;
-            background: linear-gradient(90deg, #ff6a00, #ffb347);
-            color: white;
-        }
-
-        button:hover {
-            transform: scale(1.03);
-        }
-
-        button:active {
-            transform: scale(0.95);
-        }
-
-
-        /* ===== POPUP ===== */
-
-        #popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.8);
-            align-items: center;
-            justify-content: center;
-        }
-
-        .popupBox {
-            background: #111;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px orange;
-            text-align: center;
-        }
-
-
-        /* ===== BOX ===== */
-
-        .reviewBox {
-            background: #1a1a1a;
-            padding: 10px;
-            margin-top: 10px;
-            border-radius: 8px;
-        }
-
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #aaa;
-        }
-    </style>
+</style>
 
 </head>
 
 <body>
 
+<div class="header">
 
+<img src="logo.png">
 
-    <div class="banner">
+<div class="title">Hair by Nnaya</div>
 
-        <h1>HAIR BY NNAYA</h1>
+<div class="subtitle">
+Luxury Braids • Salon & Home Service • Book Your Style
+</div>
 
-        <p>
-            Premium Styling • Home Service Available • Book Your Appointment Now
-        </p>
+</div>
 
-    </div>
+<div class="container">
 
+<h2>Book Appointment</h2>
 
-    <header>
+<label>Name</label>
+<input type="text">
 
-        <img src="nnaya.png" class="logo">
+<label>Phone</label>
+<input type="text">
 
-    </header>
+<label>Date</label>
+<input type="date">
 
+<label>Time</label>
+<input type="time">
 
+<label>Style</label>
+<input type="text">
 
+<label>Color</label>
+<input type="text">
 
-    <!-- BOOKING FORM -->
+<label>Length</label>
+<select>
+<option>Short</option>
+<option>Medium</option>
+<option>Long</option>
+</select>
 
-    <div class="card">
+<label>Location</label>
+<select>
+<option>Salon</option>
+<option>Home Service</option>
+</select>
 
-        <form id="bookingForm">
+<label>Extension</label>
 
+<div class="row">
+<input type="checkbox"> Buying
+<input type="checkbox"> Bringing
+</div>
 
-            <label>Name</label>
-            <input id="name" required>
+<label>Upload Style</label>
+<input type="file">
 
+<label>Feedback</label>
+<textarea></textarea>
 
-            <label>Phone</label>
-            <input id="phone" required>
+<label>Rating</label>
+<select>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+</select>
 
+<button onclick="book()">Book Now</button>
 
-            <label>Email</label>
-            <input id="email">
+<div class="prices">
 
+<h3>Price List</h3>
 
-            <label>Date</label>
-            <input type="date" id="date">
+<p>Braids — 3000</p>
+<p>Knotless — 5000</p>
+<p>Weaving — 7000</p>
+<p>Luxury Style — 10000</p>
 
+</div>
 
-            <label>Time</label>
-            <input type="time" id="time">
+</div>
 
+<div class="popup" id="popup">
 
-            <label>Style</label>
-            <input>
+<div class="popup-box">
 
+<h3>Booking Sent</h3>
 
-            <label>Color</label>
+<p>Email & WhatsApp notification ready</p>
 
-            <select>
-                <option>Black</option>
-                <option>Brown</option>
-                <option>Blonde</option>
-                <option>Red</option>
-            </select>
+<button onclick="closePop()">OK</button>
 
+</div>
 
-            <label>Length</label>
+</div>
 
-            <select>
-                <option>Short</option>
-                <option>Medium</option>
-                <option>Long</option>
-            </select>
+<script>
 
-
-
-            <label>Location</label>
-
-            <div class="optionBox">
-
-                <label><input type="radio" name="loc"> Saloon</label>
-                <label><input type="radio" name="loc"> Home Service</label>
-
-            </div>
-
-
-
-            <label>Extension</label>
-
-            <div class="optionBox">
-
-                <label><input type="checkbox"> Buy Extension</label>
-                <label><input type="checkbox"> Bring Extension</label>
-
-            </div>
-
-
-
-            <label>Upload Style</label>
-
-            <input type="file">
-
-
-            <textarea placeholder="Extra notes"></textarea>
-
-
-            <button>
-
-                Book Appointment
-
-            </button>
-
-        </form>
-
-    </div>
-
-
-
-    <!-- PRICE LIST BELOW FORM -->
-
-    <div class="section">
-
-        <h2>Price List</h2>
-
-        <div class="reviewBox">Braids — 5000</div>
-        <div class="reviewBox">Knotless — 7000</div>
-        <div class="reviewBox">Wig Install — 8000</div>
-        <div class="reviewBox">Home Service — 10000</div>
-
-    </div>
-
-
-
-    <!-- POPUP -->
-
-    <div id="popup">
-
-        <div class="popupBox">
-
-            <h2>Appointment Received</h2>
-
-            <p>
-
-                Your booking has been sent
-                Hair by Nnaya will contact you on WhatsApp
-
-            </p>
-
-            <button onclick="closePopup()">OK</button>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- ADMIN -->
-
-    <div class="section">
-
-        <h2>Admin Bookings</h2>
-
-        <button onclick="showBookings()">Show</button>
-
-        <div id="bookingList"></div>
-
-    </div>
-
-
-
-    <footer>
-
-        Hair by Nnaya © 2026
-
-    </footer>
-
-
-
-    <script>
-
-        function closePopup() {
-            popup.style.display = "none"
-        }
-
-
-
-        bookingForm.addEventListener("submit", function (e) {
-
-            e.preventDefault()
-
-            let booking = {
-                name: name.value,
-                phone: phone.value,
-                date: date.value,
-                time: time.value
-            }
-
-            let list =
-                JSON.parse(localStorage.getItem("bookings")) || []
-
-            list.push(booking)
-
-            localStorage.setItem(
-                "bookings",
-                JSON.stringify(list)
-            )
-
-            let msg =
-                "New Booking%0A" +
-                name.value + "%0A" +
-                phone.value
-
-
-            window.open(
-                "https://wa.me/2348032178073?text=" + msg
-            )
-
-            location.href =
-                "mailto:preshuka490@gmail.com?subject=Booking&body=" + msg
-
-
-            popup.style.display = "flex"
-
-        })
-
-
-
-        function showBookings() {
-
-            let list =
-                JSON.parse(localStorage.getItem("bookings")) || []
-
-            let html = ""
-
-            list.forEach(b => {
-
-                html +=
-                    "<div class='reviewBox'>" +
-                    b.name + " | " +
-                    b.phone + " | " +
-                    b.date + " | " +
-                    b.time +
-                    "</div>"
-
-            })
-
-            bookingList.innerHTML = html
-
-        }
-
-    </script>
+function book(){
+document.getElementById("popup").style.display="flex"
+}
+
+function closePop(){
+document.getElementById("popup").style.display="none"
+}
+
+</script>
 
 </body>
-
 </html>
