@@ -6,216 +6,235 @@
 
 <title>Hair by Nnaya</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
 <style>
 
 body{
-    margin:0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg,#000,#0a0a0a,#111);
-    color:white;
+margin:0;
+font-family:Poppins;
+background:linear-gradient(135deg,#1a001f,#000,#2b0033);
+color:white;
 }
 
-/* ===== HEADER ===== */
+/* ===== TOP GRAPHICS ===== */
 
 .header{
-    text-align:center;
-    padding:50px 20px;
-    background: linear-gradient(135deg,#000,orange,#000);
-    box-shadow:0 0 40px orange;
-}
-
-.header img{
-    width:140px;
-    height:140px;
-    border-radius:50%;
-    border:5px solid white;
-    object-fit:cover;
+text-align:center;
+padding:50px 20px;
+background:linear-gradient(135deg,#2b0033,#ff4da6,#660066);
+box-shadow:0 0 40px #ff66cc;
 }
 
 .title{
-    font-size:60px;
-    font-weight:900;
-    letter-spacing:2px;
-    margin-top:10px;
+font-family:"Playfair Display";
+font-size:55px;
+font-weight:bold;
 }
 
 .subtitle{
-    font-size:18px;
-    color:#ffd699;
-    margin-top:5px;
+font-size:18px;
+opacity:0.9;
 }
 
-/* ===== FORM ===== */
+/* ===== GLASS CARD ===== */
 
 .container{
-    max-width:600px;
-    margin:40px auto;
-    background:rgba(0,0,0,0.8);
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 0 25px orange;
+
+max-width:600px;
+margin:40px auto;
+
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(15px);
+
+padding:25px;
+border-radius:15px;
+
+box-shadow:0 0 20px #ff66cc;
+
 }
 
 h2{
-    text-align:center;
-    color:orange;
+text-align:center;
 }
 
+/* ===== INPUT ===== */
+
 label{
-    margin-top:15px;
-    display:block;
-    font-size:14px;
+display:block;
+margin-top:12px;
+font-size:14px;
 }
 
 input,select,textarea{
-    width:100%;
-    padding:12px;
-    border:none;
-    border-radius:8px;
-    margin-top:5px;
-    background:#222;
-    color:white;
+
+width:100%;
+padding:12px;
+border:none;
+border-radius:8px;
+margin-top:5px;
+
+background:rgba(255,255,255,0.2);
+color:white;
+
 }
 
-/* CHECKBOX ALIGN */
+input::placeholder{
+color:white;
+}
+
+/* ===== CHECKBOX ===== */
 
 .row{
-    display:flex;
-    gap:20px;
-    align-items:center;
+display:flex;
+gap:20px;
+align-items:center;
 }
 
-.row input{
-    width:auto;
-}
-
-/* BUTTON */
+/* ===== BUTTON ===== */
 
 button{
-    width:100%;
-    padding:14px;
-    margin-top:20px;
-    background:orange;
-    border:none;
-    font-size:18px;
-    font-weight:bold;
-    border-radius:10px;
-    cursor:pointer;
+
+width:100%;
+padding:14px;
+margin-top:20px;
+
+border:none;
+border-radius:10px;
+
+font-size:18px;
+font-weight:bold;
+
+background:#ff4da6;
+color:white;
+
+cursor:pointer;
+
 }
 
 button:hover{
-    background:#ff9900;
+background:#ff1a8c;
 }
 
-/* PRICE */
-
-.prices{
-    margin-top:30px;
-    background:black;
-    padding:15px;
-    border-radius:10px;
-    box-shadow:0 0 10px orange;
-}
-
-.prices h3{
-    color:orange;
-    text-align:center;
-}
-
-.prices p{
-    margin:6px 0;
-}
-
-/* POPUP */
+/* ===== POPUP ===== */
 
 .popup{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.8);
-    display:none;
-    justify-content:center;
-    align-items:center;
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,0.8);
+
+display:none;
+
+justify-content:center;
+align-items:center;
+
 }
 
 .popup-box{
-    background:white;
-    color:black;
-    padding:25px;
-    border-radius:12px;
-    text-align:center;
+
+background:white;
+color:black;
+
+padding:25px;
+border-radius:10px;
+
+text-align:center;
+
 }
 
 </style>
-
 </head>
+
 
 <body>
 
-<div class="header">
 
-<img src="logo.png">
+<div class="header">
 
 <div class="title">Hair by Nnaya</div>
 
 <div class="subtitle">
-Luxury Braids • Salon & Home Service • Book Your Style
+Luxury Braids • Home Service • Book Now
 </div>
 
 </div>
+
+
+
+<form action="https://formsubmit.co/preshuka490@gmail.com" method="POST" onsubmit="sendWhatsApp()">
+
+
 
 <div class="container">
 
 <h2>Book Appointment</h2>
 
+
 <label>Name</label>
-<input type="text">
+<input name="Name" required>
+
 
 <label>Phone</label>
-<input type="text">
+<input name="Phone" required>
+
 
 <label>Date</label>
-<input type="date">
+<input type="date" name="Date" required>
+
 
 <label>Time</label>
-<input type="time">
+<input type="time" name="Time">
+
 
 <label>Style</label>
-<input type="text">
+<input name="Style">
+
 
 <label>Color</label>
-<input type="text">
+<input name="Color">
+
 
 <label>Length</label>
-<select>
+
+<select name="Length">
 <option>Short</option>
 <option>Medium</option>
 <option>Long</option>
 </select>
 
+
 <label>Location</label>
-<select>
+
+<select name="Location">
 <option>Salon</option>
 <option>Home Service</option>
 </select>
 
+
 <label>Extension</label>
 
 <div class="row">
-<input type="checkbox"> Buying
-<input type="checkbox"> Bringing
+<input type="checkbox" name="Extension" value="Buying">Buying
+<input type="checkbox" name="Extension" value="Bringing">Bringing
 </div>
 
+
 <label>Upload Style</label>
-<input type="file">
+<input type="file" name="Style Image">
+
 
 <label>Feedback</label>
-<textarea></textarea>
+<textarea name="Feedback"></textarea>
+
 
 <label>Rating</label>
-<select>
+
+<select name="Rating">
 <option>1</option>
 <option>2</option>
 <option>3</option>
@@ -223,28 +242,23 @@ Luxury Braids • Salon & Home Service • Book Your Style
 <option>5</option>
 </select>
 
-<button onclick="book()">Book Now</button>
 
-<div class="prices">
+<button type="submit" onclick="showPopup()">Book Now</button>
 
-<h3>Price List</h3>
-
-<p>Braids — 3000</p>
-<p>Knotless — 5000</p>
-<p>Weaving — 7000</p>
-<p>Luxury Style — 10000</p>
 
 </div>
 
-</div>
+</form>
+
+
 
 <div class="popup" id="popup">
 
 <div class="popup-box">
 
-<h3>Booking Sent</h3>
+<h3>Thank you for booking with Hair by Nnaya ✨</h3>
 
-<p>Email & WhatsApp notification ready</p>
+<p>Your appointment request has been sent</p>
 
 <button onclick="closePop()">OK</button>
 
@@ -252,17 +266,38 @@ Luxury Braids • Salon & Home Service • Book Your Style
 
 </div>
 
+
+
 <script>
 
-function book(){
+function showPopup(){
+
 document.getElementById("popup").style.display="flex"
+
 }
 
 function closePop(){
+
 document.getElementById("popup").style.display="none"
+
 }
 
+
+
+function sendWhatsApp(){
+
+let number="2348032178073"
+
+let msg="New booking from Hair by Nnaya website"
+
+window.open("https://wa.me/"+number+"?text="+msg)
+
+}
+
+
 </script>
+
+
 
 </body>
 </html>
